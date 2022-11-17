@@ -18,7 +18,12 @@ with pd.HDFStore(fpath, 'r') as hdf:
     print(len(hdf.keys()))
     count = 0
     for key in hdf.keys():  
+        if(count == 1):
+            break
         print(count) 
         df = pd.read_hdf(fpath, key=key)
-        df.to_csv(outpath+key+'.csv')
+        print(df.head)
+        # df.astype({'physical_quantity'})
+        # print(df.dtypes)
+        df.to_csv(outpath+key+'.csv', index=True)
         count += 1

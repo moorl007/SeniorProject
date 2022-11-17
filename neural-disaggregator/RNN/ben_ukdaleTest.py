@@ -3,6 +3,8 @@ import warnings; warnings.filterwarnings('ignore')
 
 from nilmtk import DataSet
 train = DataSet('ukdale.h5')
+print('printing metadata')
+print(train.metadata)
 train.set_window(start="13-4-2013", end="14-4-2013")
 train_elec = train.buildings[1].elec
 
@@ -11,11 +13,14 @@ rnn = RNNDisaggregator()
 
 # train_mains = train_elec.mains().all_meters()[0] # The aggregated meter that provides the input
 # train_meter = train_elec.submeters()['microwave'] # The microwave meter that is used as a training target
-meter_key = 'kettle'
+meter_key = 'light'
 train_meter = train_elec.submeters()[meter_key]
+print('line 16')
+print(train_elec.submeters())
+print(train_elec)
 train_mains = train_elec.mains()
 
-rnn.train(train_mains, train_meter, epochs=1, sample_period=1)
+rnn.train(train_mains, train_meter, epochs=3, sample_period=1)
 rnn.export_model("model-ukdale.h5")
 
 test = DataSet('ukdale.h5')
@@ -37,12 +42,12 @@ output.close()
 output = HDFDataStore(disag_filename, 'r')
 result = DataSet(disag_filename)
 res_elec = result.buildings[1].elec
-predicted = res_elec['kettle']
-ground_truth = test_elec['kettle']
+predicted = res_elec['light']
+ground_truth = test_elec['light']
 
 import matplotlib.pyplot as plt
-predicted.plot()
-ground_truth.plot()
+predicted.plot(plot_kwargs={'color':'red', 'label':'predicted'})
+ground_truth.plot(plot_kwargs={'color':'green', 'label':'ground truth'})
 
 import metrics
 rpaf = metrics.recall_precision_accuracy_f1(predicted, ground_truth)
