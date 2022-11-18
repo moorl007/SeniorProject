@@ -1,0 +1,33 @@
+import os
+import csv
+
+folder = "toaster"
+filename = folder + "(11-16)"
+
+rows = []
+count = -1
+start = 1640995200
+
+with open("SeniorDataset/allCSV/" + folder + "/" + filename + ".csv", 'r') as csvfile:
+    # creating a csv reader object
+    csvreader = csv.reader(csvfile)
+     
+    # extracting field names through first row
+    # fields = next(csvreader)
+ 
+    # extracting each data row one by one
+
+    for row in csvreader:
+        if(count == -1):
+            rows.append(['timestamp','power'])
+            rows.append(["",'apparent'])
+        else:
+            rows.append([start + count, int(float(row[1]) * 1000)])
+        count+=1
+
+with open("SeniorDataset/building1/elec/converted_" + filename + ".csv", 'w', newline='') as csvfile:
+    # creating a csv writer object
+    csvwriter = csv.writer(csvfile)
+     
+    # writing the data rows
+    csvwriter.writerows(rows)
