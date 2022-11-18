@@ -1,0 +1,23 @@
+name: Senior Design Dataset
+long_name: Electric Load Disaggregation at Varying Timescales - Senior Design 2022
+creators:
+- Gorter, Brandon
+- Moorlach, Ben
+- Skarda, Jon
+- Xiong, Zach
+- Zimmer, Zeb
+publication_date: 2022
+institution: University of Minnesota Twin Cities
+contact: gorte007@umn.edu
+description: Artificial power data from several devices at varying timescales
+subject: Disaggregated power demand from domestic buildings.
+number_of_buildings: 1
+timezone: US/Central
+geo_location:
+  locality: Minnesota
+  country: US   # standard two-letter country code defined by ISO 3166-1 alpha-2
+  latitude: 44.975266 #coordinates of Walter Library
+  longitude: -93.235792
+related_documents:
+- None
+schema: https://github.com/nilmtk/nilm_metadata/tree/v0.2

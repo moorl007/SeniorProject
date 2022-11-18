@@ -1,0 +1,14 @@
+Emporia Smart Plug:
+  model: Emporia Smart Plug
+  manufacturer: Emporia Energy
+  manufacturer_url: https://www.emporiaenergy.com
+  description: >
+    Measures the apparent power of a circuit on the plug-level.
+  sample_period: 1   # the interval between samples. In seconds.
+  max_sample_period: 86400   # Max allowable interval between samples. Seconds.
+  measurements:
+  - physical_quantity: power   # power, voltage, energy, current?
+    type: apparent   # active (real power), reactive or apparent?
+    upper_limit: 1800
+    lower_limit: 0
+  wireless: true
