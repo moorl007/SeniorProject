@@ -11,29 +11,27 @@ from six import iteritems
 
 rcParams['figure.figsize'] = (13, 6)
 
-train_data = DataSet('Train/AMPds2.h5')
-test_data = DataSet('Test/AMPds2.h5')
+train_data = DataSet('SeniorDataset/h5_files/test.h5')
+test_data = DataSet('SeniorDataset/h5_files/test.h5')
 
-train_data.set_window(start='2013-01-05', end='2013-01-06')
+# train_data.set_window(start='2013-01-05', end='2013-01-06')
 train_elec_1 = train_data.buildings[1].elec
-train_data.set_window(start='2013-02-05', end='2013-02-06')
-train_elec_2 = train_data.buildings[1].elec
-test_data.set_window(start='2012-04-27', end='2012-04-28')
-train_elec_3 = train_data.buildings[1].elec
-test_data.set_window(start='2012-05-01', end='2012-05-02')
-train_elec_4 = train_data.buildings[1].elec
-test_data.set_window(start='2012-05-03', end='2012-05-04')
-train_elec_5 = train_data.buildings[1].elec
-test_data.set_window(start='2013-01-06', end='2013-01-07')
+# train_data.set_window(start='2013-02-05', end='2013-02-06')
+# train_elec_2 = train_data.buildings[1].elec
+# test_data.set_window(start='2012-04-27', end='2012-04-28')
+# train_elec_3 = train_data.buildings[1].elec
+# test_data.set_window(start='2012-05-01', end='2012-05-02')
+# train_elec_4 = train_data.buildings[1].elec
+# test_data.set_window(start='2012-05-03', end='2012-05-04')
+# train_elec_5 = train_data.buildings[1].elec
+# test_data.set_window(start='2013-01-06', end='2013-01-07')
 test_elec = test_data.buildings[1].elec
 
-sample_period = 60
-type_of_power = 'active'
 hart = Hart85()
 
-train_elec = train_elec_1.submeters().select_top_k(k=7)
+train_elec = train_elec_1.submeters()
 
-hart.train(train_elec)
+hart.train(train_elec, columns=[('power', 'apparent')])
 
 # fhmm.export_model('FHMM/trained_model.h5')
 
