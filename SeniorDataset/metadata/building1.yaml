@@ -3,7 +3,7 @@ elec_meters: # a dictionary where each key is a meter instance
   1:
     site_meter: true # meter 1 measures the whole-building aggregate
     device_model: Emporia Smart Plug
-    data_location: building1/converted_hairDryer(11-15).csv
+    data_location: building1/meter1.csv
   2:
     submeter_of: 1
     device_model: Emporia Smart Plug
@@ -24,11 +24,16 @@ elec_meters: # a dictionary where each key is a meter instance
     submeter_of: 1
     device_model: Emporia Smart Plug
     data_location: building1/converted_toaster(11-16).csv
+  7:
+    submeter_of: 1
+    device_model: Emporia Smart Plug
+    data_location: building1/converted_hairDryer(11-15).csv
 
 appliances:
 - {type: fridge, instance: 1, meters: [2]}
 - {type: kettle, instance: 1, meters: [3]}
-- {type: laptop, instance: 1, meters: [4]}
+- {type: computer, instance: 1, meters: [4]}
 - {type: microwave, instance: 1, meters: [5]}
 - {type: toaster, instance: 1, meters: [6]}
+- {type: hair dryer, instance: 1, meters: [7]}
 
