@@ -33,29 +33,94 @@ train_elec = train_elec_1.submeters()
 
 hart.train(train_elec, columns=[('power', 'apparent')])
 
-# fhmm.export_model('FHMM/trained_model.h5')
+# df_mains = next(test_elec.mains().load())
+# df_mains.plot()
+# plt.legend(["Aggregate"]);
+# plt.ylabel("Power (W)")
+# plt.xlabel("Time")
+# plt.savefig("Output/hart_aggregate")
+# plt.close()
 
-output = HDFDataStore('output.h5', 'w')
-df = hart.disaggregate(test_elec.mains(), output)
+output = HDFDataStore('Output/output.h5', 'w')
+df = hart.disaggregate(test_elec.mains(), output, sample_period=1)
 
-df_fridge = next(test_elec['fridge', 1].load())
-merged_df = pd.merge(df[0], df_fridge, left_index=True, right_index=True)
+submeters = test_elec.submeters()
 
-merged_df[0].plot(c='r')
-merged_df['power', 'apparent'].plot()
-plt.legend(["Predicted", "Ground truth"]);
-plt.ylabel("Power (W)")
-plt.xlabel("Time")
-plt.savefig("Output/hart_fridge")
-plt.close()
+print(hart.best_matched_appliance(submeters, df))
 
-df_fridge = next(test_elec['heat pump', 1].load())
-merged_df = pd.merge(df[0], df_fridge, left_index=True, right_index=True)
+# df_appliance = next(test_elec['fridge', 1].load())
+# merged_df = pd.merge(df[0], df_appliance, left_index=True, right_index=True)
 
-merged_df[0].plot(c='r')
-merged_df['power', 'apparent'].plot()
-plt.legend(["Predicted", "Ground truth"]);
-plt.ylabel("Power (W)")
-plt.xlabel("Time")
-plt.savefig("Output/hart_heatpump")
-plt.close()
+# merged_df[0].plot(c='r')
+# merged_df['power', 'apparent'].plot()
+# plt.legend(["Predicted", "Ground truth"]);
+# plt.ylabel("Power (W)")
+# plt.xlabel("Time")
+# plt.savefig("Output/hart_fridge")
+# plt.close()
+
+# df_appliance = next(test_elec['hair dryer', 1].load())
+# merged_df = pd.merge(df[0], df_appliance, left_index=True, right_index=True)
+
+# merged_df[0].plot(c='r')
+# merged_df['power', 'apparent'].plot()
+# plt.legend(["Predicted", "Ground truth"]);
+# plt.ylabel("Power (W)")
+# plt.xlabel("Time")
+# plt.savefig("Output/hart_hair_dryer")
+# plt.close()
+
+# df_appliance = next(test_elec['microwave', 1].load())
+# merged_df = pd.merge(df[0], df_appliance, left_index=True, right_index=True)
+
+# merged_df[0].plot(c='r')
+# merged_df['power', 'apparent'].plot()
+# plt.legend(["Predicted", "Ground truth"]);
+# plt.ylabel("Power (W)")
+# plt.xlabel("Time")
+# plt.savefig("Output/hart_microwave")
+# plt.close()
+
+# df_appliance = next(test_elec['hair dryer', 1].load())
+# merged_df = pd.merge(df[0], df_appliance, left_index=True, right_index=True)
+
+# merged_df[0].plot(c='r')
+# merged_df['power', 'apparent'].plot()
+# plt.legend(["Predicted", "Ground truth"]);
+# plt.ylabel("Power (W)")
+# plt.xlabel("Time")
+# plt.savefig("Output/hart_hair_dryer")
+# plt.close()
+
+# df_appliance = next(test_elec['computer', 1].load())
+# merged_df = pd.merge(df[0], df_appliance, left_index=True, right_index=True)
+
+# merged_df[0].plot(c='r')
+# merged_df['power', 'apparent'].plot()
+# plt.legend(["Predicted", "Ground truth"]);
+# plt.ylabel("Power (W)")
+# plt.xlabel("Time")
+# plt.savefig("Output/hart_computer")
+# plt.close()
+
+# df_appliance = next(test_elec['kettle', 1].load())
+# merged_df = pd.merge(df[0], df_appliance, left_index=True, right_index=True)
+
+# merged_df[0].plot(c='r')
+# merged_df['power', 'apparent'].plot()
+# plt.legend(["Predicted", "Ground truth"]);
+# plt.ylabel("Power (W)")
+# plt.xlabel("Time")
+# plt.savefig("Output/hart_kettle")
+# plt.close()
+
+# df_appliance = next(test_elec['toaster', 1].load())
+# merged_df = pd.merge(df[0], df_appliance, left_index=True, right_index=True)
+
+# merged_df[0].plot(c='r')
+# merged_df['power', 'apparent'].plot()
+# plt.legend(["Predicted", "Ground truth"]);
+# plt.ylabel("Power (W)")
+# plt.xlabel("Time")
+# plt.savefig("Output/hart_toaster")
+# plt.close()
