@@ -361,7 +361,7 @@ class RNNDisaggregator(Disaggregator):
         model.add(Dense(128, activation='tanh'))
         model.add(Dense(1, activation='linear'))
 
-        model.compile(loss='mse', optimizer='adam')
+        model.compile(loss='mse', optimizer='adam', run_eagerly=True)
         plot_model(model, to_file='model.png', show_shapes=True)
 
         return model

@@ -1,8 +1,8 @@
 import csv
 
-fileList = ['/building1/elec/converted_fridge(11-16)', '/building1/elec/converted_hairDryer(11-15)', '/building1/elec/converted_kettle(11-16)', '/building1/elec/converted_laptop(11-15)', '/building1/elec/converted_microwave(11-15)', '/building1/elec/converted_toaster(11-16)']
+fileList = ['/building1/elec/meter2', '/building1/elec/meter3', '/building1/elec/meter4', '/building1/elec/meter5', '/building1/elec/meter6', '/building1/elec/meter7']
 folder = "building"
-filename = "meter1(11-18)"
+filename = "meter1"
 rows = [[],[],[],[],[],[]]
 count = 0
 for i in fileList:

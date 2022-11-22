@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 keys = ['/building1/elec/meter1', '/building1/elec/meter2', '/building1/elec/meter3', '/building1/elec/meter4', '/building1/elec/meter5', '/building1/elec/meter6', '/building1/elec/meter7']
 pathBeg = 'SeniorDataset'
 
-powerdata_filename = 'SeniorDataset/h5_files/test.h5'
+powerdata_filename = 'SeniorDataset/h5_files/RNN_test.h5'
 metadata_dir = 'SeniorDataset/metadata'
 
 #IMPORTANT!!! NEED TO CONVERT DATA INTO WATTS FROM KILOWATTS
