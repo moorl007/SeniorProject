@@ -28,7 +28,6 @@ print(len(rows[3]))
 print(len(rows[4]))
 print(len(rows[5]))
 print(len(rows[6]))
-print(len(rows[7]))
 
 finalAG = [["",'power'], ["", 'apparent']]
 wattAgList = [0] * len(rows[0])
