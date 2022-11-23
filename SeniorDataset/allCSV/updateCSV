@@ -1,8 +1,8 @@
 import os
 import csv
 
-folder = "hairDryer"
-filename = folder + "(11-15)"
+folder = "crockpot"
+filename = folder + "(11-18)"
 
 length = 10000
 rows = []
@@ -29,7 +29,7 @@ with open("SeniorDataset/allCSV/" + folder + "/" + filename + ".csv", 'r') as cs
         rows.append([start + count, 0.0])
         count += 1
 
-with open("SeniorDataset/building1/elec/meter7.csv", 'w', newline='') as csvfile:
+with open("SeniorDataset/building1/elec/meter8.csv", 'w', newline='') as csvfile:
     # creating a csv writer object
     csvwriter = csv.writer(csvfile)
      

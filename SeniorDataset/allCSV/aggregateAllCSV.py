@@ -1,9 +1,9 @@
 import csv
 
-fileList = ['/building1/elec/meter2', '/building1/elec/meter3', '/building1/elec/meter4', '/building1/elec/meter5', '/building1/elec/meter6', '/building1/elec/meter7']
+fileList = ['/building1/elec/meter2', '/building1/elec/meter3', '/building1/elec/meter4', '/building1/elec/meter5', '/building1/elec/meter6', '/building1/elec/meter7', '/building1/elec/meter8']
 folder = "building"
 filename = "meter1"
-rows = [[],[],[],[],[],[]]
+rows = [[],[],[],[],[],[],[]]
 count = 0
 for i in fileList:
     start = 1640995200
@@ -27,6 +27,8 @@ print(len(rows[2]))
 print(len(rows[3]))
 print(len(rows[4]))
 print(len(rows[5]))
+print(len(rows[6]))
+print(len(rows[7]))
 
 finalAG = [["",'power'], ["", 'apparent']]
 wattAgList = [0] * len(rows[0])
