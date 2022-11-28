@@ -40,5 +40,5 @@ appliances:
 - {type: microwave, instance: 1, meters: [5]}
 - {type: toaster, instance: 1, meters: [6]}
 - {type: hair dryer, instance: 1, meters: [7]}
-- {type: crockpot, instance: 1, meters: [8]}
+- {type: slow cooker, instance: 1, meters: [8]}
 
