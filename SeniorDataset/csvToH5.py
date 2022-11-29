@@ -6,13 +6,12 @@ from nilmtk.measurement import LEVEL_NAMES
 import matplotlib.pyplot as plt
 
 # keys = ['/Constructed_Data_12Hour/meter1', '/Constructed_Data_12Hour/meter2', '/Constructed_Data_12Hour/meter3', '/Constructed_Data_12Hour/meter4', '/Constructed_Data_12Hour/meter5', '/Constructed_Data_12Hour/meter6', '/Constructed_Data_12Hour/meter7', '/Constructed_Data_12Hour/meter8']
-keys = ['/building1/elec/meter1', '/building1/elec/meter2', '/building1/elec/meter3', '/building1/elec/meter4', '/building1/elec/meter5', '/building1/elec/meter6', '/building1/elec/meter7']
-pathBeg = 'SeniorDataset'
+keys = ['/building1/elec/meter1', '/building1/elec/meter2', '/building1/elec/meter3', '/building1/elec/meter4', '/building1/elec/meter5', '/building1/elec/meter6', '/building1/elec/meter7', '/building1/elec/meter8']
+pathBeg = 'SeniorDataset/Constructed_Data_12Hour'
 
-powerdata_filename = 'SeniorDataset/h5_files/RNN_test_12Hour.h5'
+powerdata_filename = 'SeniorDataset/h5_files/Hart_test_12Hour.h5'
 metadata_dir = 'SeniorDataset/metadata'
 
-#IMPORTANT!!! NEED TO CONVERT DATA INTO WATTS FROM KILOWATTS
 for count, key in enumerate(keys):
     df = pd.read_csv(pathBeg+key+'.csv', low_memory=False, dtype={'a': np.float32}, header=[0, 1], index_col=0)
     df.index = pd.to_datetime(df.index, unit='s', utc=True)
