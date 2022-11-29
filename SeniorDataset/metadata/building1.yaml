@@ -15,20 +15,16 @@ elec_meters: # a dictionary where each key is a meter instance
   4:
     submeter_of: 1
     device_model: Emporia Smart Plug
-    data_location: building1/elec/meter4.csv
+    data_location: building1/elec/meter5.csv
   5:
     submeter_of: 1
     device_model: Emporia Smart Plug
-    data_location: building1/elec/meter5.csv
+    data_location: building1/elec/meter6.csv
   6:
     submeter_of: 1
     device_model: Emporia Smart Plug
-    data_location: building1/elec/meter6.csv
-  7:
-    submeter_of: 1
-    device_model: Emporia Smart Plug
     data_location: building1/elec/meter7.csv
-  8:
+  7:
     submeter_of: 1
     device_model: Emporia Smart Plug
     data_location: building1/elec/meter8.csv
@@ -36,9 +32,8 @@ elec_meters: # a dictionary where each key is a meter instance
 appliances:
 - {type: fridge, instance: 1, meters: [2]}
 - {type: kettle, instance: 1, meters: [3]}
-- {type: computer, instance: 1, meters: [4]}
-- {type: microwave, instance: 1, meters: [5]}
-- {type: toaster, instance: 1, meters: [6]}
-- {type: hair dryer, instance: 1, meters: [7]}
-- {type: slow cooker, instance: 1, meters: [8]}
+- {type: microwave, instance: 1, meters: [4]}
+- {type: toaster, instance: 1, meters: [5]}
+- {type: hair dryer, instance: 1, meters: [6]}
+- {type: slow cooker, instance: 1, meters: [7]}
 
