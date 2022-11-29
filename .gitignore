@@ -1,3 +1,4 @@
 
 .DS_Store
 neural-disaggregator/RNN/ukdale.h5
+neural-disaggregator/RNN/disag-out.h5
