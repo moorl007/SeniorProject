@@ -1,0 +1,49 @@
+import os
+import os.path
+import csv
+
+folder = "96HourCSV_Converted"
+number = 7
+filename = "meter" + str(number)
+outputFilename = "SeniorDataset/96Hour_60Second/meter" + str(number) + ".csv"
+
+length = 345500
+rows = []
+count = -1
+start = 1640995200
+STEP = 60
+miniCount = 0
+
+with open("SeniorDataset/" + folder + "/" + filename + ".csv", 'r') as csvfile:
+    # creating a csv reader object
+    csvreader = csv.reader(csvfile)
+     
+    # extracting field names through first row
+    # fields = next(csvreader)
+ 
+    # extracting each data row one by one
+    temp = 0
+    for row in csvreader:
+        if(count == -1):
+            rows.append(['timestamp','power'])
+            rows.append(["",'apparent'])
+        elif(count < length and count > 0):
+            if(miniCount < STEP):
+                temp += int(float(row[1]))
+                miniCount += 1
+            elif (count >= STEP):
+                rows.append([start+count, int(temp/STEP)])
+                miniCount = 0
+                temp = 0
+        count += 1
+        
+    while(count < length/STEP):
+        rows.append([start + count, 0.0])
+        count += 1
+
+with open(outputFilename, 'w', newline='') as csvfile:
+    # creating a csv writer object
+    csvwriter = csv.writer(csvfile)
+     
+    # writing the data rows
+    csvwriter.writerows(rows)
