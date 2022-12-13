@@ -1,6 +1,8 @@
 # Electric Load Disaggregation at Varying Timescales
 A Senior Project by Ben Moorlach, Brandon Gorter, Jon Skarda, Zach Xiong, and Zeb Zimmer
 
+[Product Launch Video](https://youtu.be/h3MfLHuDVjE)
+
 This project and the code described below requires a NILMTK environment which can be difficult to setup if unfamiliar with Anaconda Envrionments.
 [NILMTK installation guide ](https://klemenjak.medium.com/a-step-by-step-manual-for-installing-nilmtk-bff86e3aa418) is a great resource that we used to set up our own envrioments.
 The process, even with the guide, can be frustrating but the fuctions and premade algorithms that come from NILMTK are essential and are worth the effort.
@@ -50,7 +52,5 @@ The original waveforms were used to synthetically create the 96HourCSV files.  9
 A failed attempt to get a properly-working recurrent neural network lies buried here.  In the RNN subfolder the RNN-test-notebook.ipynb was used to try and evalute the RNN.
 This entire folder comes from [Gabriel Freeze's Neural Disaggregator github repo](https://github.com/GabrielFreeze/neural-disaggregator) and likely would work better than 
 our other models if given more training data.
-
-[Product Launch Video](https://youtu.be/h3MfLHuDVjE)
 
 A final report summarizing and concluding the project is included in the repository.
