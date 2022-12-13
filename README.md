@@ -52,3 +52,5 @@ This entire folder comes from [Gabriel Freeze's Neural Disaggregator github repo
 our other models if given more training data.
 
 [Product Launch Video](https://youtu.be/h3MfLHuDVjE)
+
+A final report summarizing and concluding the project is included in the repository.
