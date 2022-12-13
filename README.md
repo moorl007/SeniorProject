@@ -29,9 +29,11 @@ There are a few decent graphs that should the desired output and one model of pr
 
 ## Folder Breakdown
 ### Combinatorial Optimization
+This folder contains CO_Performance_Analysis.ipynb, which is a notebook file that was used to test another benchmark supervised algorithm called Combinatorial Optimization. This algorithm did not end up being used for our final product, but was part of our initial testing which helped us decide which algorithms to use.
 ### FHMM
 FHMM_Performance_Analysis.ipynb is the only file of note here. It was used to test the FHMM method from NILMTK.  
 ### Hart Unsupervised
+This folder contains all of the files used for testing the Hart Unsupervised algorithm. Hart_Performance_Analysis.ipynb was the main file used for performance analysis, while Hart85.py was used for testing purposes. The various output files are datastore files containing outputs from the performance testing.
 ### Output
 A bunch of disaggregated waveforms.  The title of the photos shows where it came from except the labels in the photos are wrong. All pictures were at 1 second sampling frequency.
 ### SeniorDataset
@@ -48,3 +50,5 @@ The original waveforms were used to synthetically create the 96HourCSV files.  9
 A failed attempt to get a properly-working recurrent neural network lies buried here.  In the RNN subfolder the RNN-test-notebook.ipynb was used to try and evalute the RNN.
 This entire folder comes from [Gabriel Freeze's Neural Disaggregator github repo](https://github.com/GabrielFreeze/neural-disaggregator) and likely would work better than 
 our other models if given more training data.
+
+[Product Launch Video](https://youtu.be/h3MfLHuDVjE)
