@@ -5,12 +5,12 @@ from nilmtk import DataSet
 from nilmtk.measurement import LEVEL_NAMES
 import matplotlib.pyplot as plt
 
-number = 60
-keys = ['/building1/elec/meter1', '/building1/elec/meter2', '/building1/elec/meter3', '/building1/elec/meter4', '/building1/elec/meter5', '/building1/elec/meter6', '/building1/elec/meter7']
+number = 1
+keys = ['/building1/elec/meter1', '/building1/elec/meter2', '/building1/elec/meter3']#, '/building1/elec/meter4', '/building1/elec/meter5', '/building1/elec/meter6', '/building1/elec/meter7']
 # keys = ['/96Hour_' + str(number) + 'Second/meter1', '/96Hour_' + str(number) + 'Second/meter2', '/96Hour_' + str(number) + 'Second/meter3', '/96Hour_' + str(number) + 'Second/meter4', '/96Hour_' + str(number) + 'Second/meter5', '/96Hour_' + str(number) + 'Second/meter6', '/96Hour_' + str(number) + 'Second/meter7']
 pathBeg = 'SeniorDataset'
 
-powerdata_filename = 'SeniorDataset/h5_files/96Hour_' + str(number) + 'Second.h5'
+powerdata_filename = 'SeniorDataset/h5_files/96Hour_1TestSecond.h5'
 metadata_dir = 'SeniorDataset/metadata'
 
 for count, key in enumerate(keys):
